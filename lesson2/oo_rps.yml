@@ -15,11 +15,3 @@ review_history: "Would you like the review the move history for this session?"
 play_again: "Would you like to continue playing?"
 proceed_error: "Invalid choice - please enter y or n"
 change_machine?: "Would you like to try a new opponent?"
-
-
-# Personality Notes
-  # 1. "rock on" - throws rock 70% of the time, random selection the rest of the time
-  # 2. "benevolent AI" - is aware of the player's move and chooses a losing move, 90% of the time
-  # 3. "ambivalent" - is aware of the player's move and chooses either a winning move or a losing move at random (no ties)
-  #                   loses intentionally 60% of the time, wins 40% of the time
-  # 4. "shapeshifter" - chooses at random from all the personality type options
