@@ -1,0 +1,25 @@
+welcome: "Welcome to Rock Paper Scissors - Object Oriented edition!"
+intro: "This is a version with 5 possible moves: rock, paper, scissors, lizard, and spock."
+rules_ask: "Would you like to review the rules?"
+continue: "Hit any key to continue"
+goodbye: "Thanks for playing. Goodbye!"
+name_ask: "What is your name?"
+name_error: "You must have a name! Could you enter it please?"
+move_error: "Sorry, that is not a valid choice"
+cur_scores: "The current scores are: "
+final_scores: "Final scores are as follows: "
+change_opponent?: "Would you like a different opponent?"
+opponent_error: "That wasn't a value I can understand. Please enter a number between 0-5"
+
+review_history: "Would you like the review the move history for this session?"
+play_again: "Would you like to continue playing?"
+proceed_error: "Invalid choice - please enter y or n"
+change_machine?: "Would you like to try a new opponent?"
+
+
+# Personality Notes
+  # 1. "rock on" - throws rock 70% of the time, random selection the rest of the time
+  # 2. "benevolent AI" - is aware of the player's move and chooses a losing move, 90% of the time
+  # 3. "ambivalent" - is aware of the player's move and chooses either a winning move or a losing move at random (no ties)
+  #                   loses intentionally 60% of the time, wins 40% of the time
+  # 4. "shapeshifter" - chooses at random from all the personality type options
