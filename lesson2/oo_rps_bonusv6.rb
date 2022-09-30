@@ -385,7 +385,6 @@ end
 class Computer < Player
   include Personality
 
-  attr_accessor :opponent_move
   attr_reader :morph
 
   AI_LIST = { 'R2D2, the Rocker' => :rock_on,
@@ -421,7 +420,7 @@ class Computer < Player
 
   private
 
-  attr_accessor :personality
+  attr_accessor :personality, :opponent_move
   attr_writer :morph
 end
 
