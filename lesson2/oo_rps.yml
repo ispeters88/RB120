@@ -1,5 +1,6 @@
 welcome: "Welcome to Rock Paper Scissors - Object Oriented edition!"
 intro: "This is a version with 5 possible moves: rock, paper, scissors, lizard, and spock."
+
 rules_ask: "Would you like to review the rules?"
 continue: "Hit any key to continue"
 goodbye: "Thanks for playing. Goodbye!"

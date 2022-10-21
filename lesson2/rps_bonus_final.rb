@@ -21,6 +21,7 @@ module Viewable
     wipe_screen
     prompt(MSG["welcome"], 1)
     prompt(MSG["intro"], 1)
+    prompt("The format today will be: first to #{Game::FIRST_TO} wins")
   end
 
   def display_rules
@@ -50,7 +51,7 @@ module Viewable
 
   def display_scores
     wipe_screen
-    prompt(MSG["cur_scores"], 1) unless final_scores?(scores)
+    prompt MSG["cur_scores"] unless final_scores?(scores)
 
     scores.each do |player, score|
       prompt "#{player.name} : #{score}" unless player == 'tie'
@@ -59,11 +60,10 @@ module Viewable
   end
 
   def final_scores?(scores)
-    scores.any? { |player, score| score == 3 && player != 'tie' }
+    scores.any? { |player, score| score == Game::FIRST_TO && player != 'tie' }
   end
 
   def display_match_result
-    wipe_screen
     prompt "The match winner is #{winner.name}! The loser is #{loser.name}."
     prompt MSG["final_scores"]
   end
@@ -124,12 +124,8 @@ module Interactable
 
   def welcome
     display_welcome_messages
-
     display_rules if proceed?(MSG["rules_ask"], MSG["proceed_error"])
-
-    prompt MSG["continue"]
-    gets.chomp
-    wipe_screen
+    prompt_for_continue
   end
 
   def proceed?(ask, error)
@@ -188,10 +184,18 @@ module Interactable
   def wipe_screen
     system "clear"
   end
+
+  def prompt_for_continue
+    prompt MSG["continue"]
+    gets.chomp
+    wipe_screen
+  end
 end
 
 class Game
   include Interactable
+
+  FIRST_TO = 3
 
   @@match_counter = 0
 
@@ -214,7 +218,7 @@ class Game
 
     loop do
       play_round
-      break if [human, computer].any? { |player| scores[player] == 3 }
+      break if [human, computer].any? { |player| scores[player] == FIRST_TO }
     end
 
     match_result
@@ -232,6 +236,7 @@ class Game
 
   def match_result
     display_match_result
+    prompt_for_continue
     display_scores
   end
 
@@ -255,7 +260,8 @@ class Game
 
     update_scores
     display_winner
-    display_scores
+    prompt_for_continue
+    display_scores unless final_scores?(scores)
   end
 
   def determine_winner
