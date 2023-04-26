@@ -1,0 +1,5 @@
+hit_or_stay: "Would you like to hit or stay?"
+hit_or_stay_error: "That is not a valid choice. Please enter hit or stay"
+hit: "So you decided to hit..."
+
+quitter: "Never took you for a quitter!"

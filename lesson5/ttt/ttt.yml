@@ -1,0 +1,20 @@
+welcome: "Welcome to my object oriented version of Tic Tac Toe"
+board_size: "What size board would you like to use for this game?"
+
+player2: "Would you like to add a second player, or play against the computer?\n1 Human\n2 Computer"
+player_choice_error: "I don't understand the choice you entered, and I won't accept it. Please enter 1 (Human) or 2 (Computer)"
+
+name_ask: "What should I call you?"
+marker_ask: "Would you like to be X or O?"
+
+choose_square: "What square would you like to play in? Choose of the following available squares:"
+square_error: "That is not a free square. Please select from the squares listed as available"
+
+play_again: "Would you like to continue playing?"
+proceed_error: "Invalid choice - please enter y or n"
+
+cur_scores: "The current scores are: "
+final_scores: "Final scores are as follows: "
+
+result: "The result of the match is as follows"
+goodbye: "Thanks for playing. Come back soon!"

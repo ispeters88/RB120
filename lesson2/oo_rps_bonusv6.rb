@@ -119,8 +119,6 @@ module Formattable
 end
 
 module Interactable
-  include Formattable
-  include Viewable
 
   def welcome
     display_welcome_messages
@@ -131,6 +129,12 @@ module Interactable
     gets.chomp
     wipe_screen
   end
+
+  #def continue_keystroke
+  #  puts MSG["continue"]
+  #  gets.chomp
+  #  wipe_screen
+  #end
 
   def proceed?(ask, error)
     choice = nil
@@ -192,6 +196,8 @@ end
 
 class Game
   include Interactable
+  include Formattable
+  include Viewable
 
   @@match_counter = 0
 
@@ -366,6 +372,8 @@ end
 
 class Player
   include Interactable
+  include Formattable
+  include Viewable
   include Personality
 
   attr_accessor :move, :name
@@ -426,6 +434,8 @@ end
 
 class History
   include Interactable
+  include Formattable
+  include Viewable
 
   attr_reader :match_results, :moves
 
